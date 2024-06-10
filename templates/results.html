@@ -1,0 +1,20 @@
+{% extends 'base.html' %} {% block title %}Results{% endblock %} {% block
+content %}
+<h1 class="mt-5">Extracted Colors</h1>
+{% if colors %}
+<div class="row">
+  {% for color in colors %}
+  <div class="col-md-3">
+    <div class="card mb-4 shadow-sm">
+      <div class="card-body" style="background-color: {{ color }};">
+        <p class="card-text">{{ color }}</p>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+<h2>Color Distribution Plot</h2>
+<img src="{{ plot_url }}" alt="Color Distribution Plot" class="img-fluid" />
+{% else %}
+<p>No colors to display.</p>
+{% endif %} {% endblock %}

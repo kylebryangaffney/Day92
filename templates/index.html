@@ -1,0 +1,16 @@
+{% extends 'base.html' %} {% block title %}Home{% endblock %} {% block content
+%}
+<h1 class="mt-5">Color Extractor</h1>
+<form method="POST" enctype="multipart/form-data">
+  {{ form.hidden_tag() }}
+  <div class="form-group">
+    {{ form.image_file.label(class="form-label") }} {{
+    form.image_file(class="form-control") }}
+  </div>
+  <div class="form-group mt-3">
+    {{ form.colors_to_return.label(class="form-label") }} {{
+    form.colors_to_return(class="form-control") }}
+  </div>
+  <div class="form-group mt-3">{{ form.submit(class="btn btn-primary") }}</div>
+</form>
+{% endblock %}
